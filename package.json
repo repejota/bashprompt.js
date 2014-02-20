@@ -1,15 +1,32 @@
 {
-  "name": "bashprompt",
-  "description": "A bash prompt framework in node.js",
-  "version": "0.1.0",
-  "main": "./src/main.js",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt-cli": "*",
-    "grunt": "*",
-    "grunt-karma": "~0.6.2",
-    "grunt-contrib-jshint": "*",
-    "karma-ng-html2js-preprocessor": "~0.1.0",
-    "karma-ng-scenario": "~0.1.0"
-  }
+    "name": "bashprompt",
+    "description": "A bash prompt framework in node.js",
+    "version": "0.1.0",
+    "author": "Raül Pérez <repejota@gmail.com>",
+    "preferGlobal": true,
+    "main": "./src/main",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/repejota/bashprompt.git"
+    },
+    "dependencies": {
+
+    },
+    "analyze": false,
+    "devDependencies": {
+        "matchdep": "*",
+        "grunt": "*",
+        "grunt-karma": "~0.6.2",
+        "grunt-contrib-jshint": "*",
+        "karma-ng-html2js-preprocessor": "~0.1.0",
+        "karma-ng-scenario": "~0.1.0"
+    },
+    "scripts": {
+        "bashprompt": "./bin/bashprompt"
+    },
+    "license": "MIT",
+    "engine": {
+        "node": ">=0.10.*"
+    }
 }
+

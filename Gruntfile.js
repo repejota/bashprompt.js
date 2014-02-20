@@ -42,7 +42,7 @@ module.exports = function (grunt) {
     ]);
 
     // Prune task
-    grunt.registerTask('reset', [
+    grunt.registerTask('prune', [
         'prune'
     ]);
 
