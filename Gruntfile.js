@@ -35,11 +35,22 @@ module.exports = function (grunt) {
     // Configuration tasks
     grunt.initConfig({
 
+        jsdoc: {
+            build: {
+                options: {
+                    destination: 'doc/api'
+                },
+                src: ['lib/**/*.js', 'bin/bp']
+            }
+        },
+
         bashlint: {
-            options: {
-                force: true
-            },
-            src: ['contrib/bp.sh']
+            build: {
+                options: {
+                    force: true
+                },
+                src: ['contrib/bp.sh']
+            }
         },
 
         jshint: {
@@ -51,10 +62,16 @@ module.exports = function (grunt) {
         },
 
         clean: {
+            build: {
+                files: [{
+                    dot: true,
+                    src: ['doc/api']
+                }]
+            },
             prune: {
                 files: [{
                     dot: true,
-                    src: ['node_modules', 'doc/api']
+                    src: ['node_modules']
                 }]
             }
         }
@@ -63,10 +80,18 @@ module.exports = function (grunt) {
 
     // Build task
     grunt.registerTask('build', [
+        'clean:build',
+        'jshint:build',
+        'bashlint:build',
+        'jsdoc:build'
     ]);
 
     // Dist task
     grunt.registerTask('dist', [
+    ]);
+
+    // Release task
+    grunt.registerTask('release', [
     ]);
 
     // Prune task
@@ -74,14 +99,16 @@ module.exports = function (grunt) {
         'clean'
     ]);
 
-    // Release task
-    grunt.registerTask('release', [
-    ]);
-
     // Check task
     grunt.registerTask('check', [
         'bashlint',
         'jshint'
+    ]);
+
+    // Doc task
+    grunt.registerTask('doc', [
+        'clean:build',
+        'jsdoc'
     ]);
 
     // Default task

@@ -26,10 +26,11 @@
   "devDependencies": {
     "matchdep": "*",
     "grunt": "*",
-    "grunt-karma": "~0.6.2",
+    "grunt-karma": "*",
+    "grunt-jsdoc": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-clean": "*",
-    "grunt-lint-bash": "~0.1.0"
+    "grunt-lint-bash": "*"
   },
   "bin": {
     "bp": "./bin/bp"
