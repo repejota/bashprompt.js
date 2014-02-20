@@ -24,6 +24,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 // END LICENSE BLOCK
+//
 
-var bashprompt = require('bashprompt.js');
-console.log(bashprompt);
+var bashprompt = require('bashprompt');
+bashprompt.cli();

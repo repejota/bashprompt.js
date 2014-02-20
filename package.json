@@ -4,7 +4,11 @@
     "version": "0.1.0",
     "author": "Raül Pérez <repejota@gmail.com>",
     "preferGlobal": true,
-    "main": "./src/main.js",
+    "main": "./lib/index.js",
+    "directories" : {
+        "lib" : "lib",
+        "test" : "test"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/repejota/bashprompt.js.git"
@@ -12,8 +16,11 @@
     "bugs": {
         "url": "https://github.com/repejota/bashprompt.js/issues"
     },
+    "homepage": "https://github.com/repejota/bashprompt.js",
     "dependencies": {
-        "colors": "*"
+        "nomnom": "*",
+        "colors": "*",
+        "git-rev": "*"
     },
     "analyze": false,
     "devDependencies": {
@@ -26,7 +33,7 @@
         "karma-ng-scenario": "~0.1.0"
     },
     "bin": {
-        "bashprompt": "./bin/bashprompt"
+        "bp": "./bin/bp"
     },
     "license": [{
         "type": "MIT",
@@ -34,5 +41,8 @@
     }],
     "engine": {
         "node": ">=0.10.*"
-    }
+    },
+    "readmeFilename": "README.md",
+    "_id": "bp@0.1.0",
+    "_from": "bp@>=0.1"
 }

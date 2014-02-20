@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         jshint: {
             build: {
                 files: {
-                    src: ['src/**/*.js', 'Gruntfile.js']
+                    src: ['lib/**/*.js', 'Gruntfile.js']
                 }
             }
         },
