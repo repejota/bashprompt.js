@@ -4,13 +4,16 @@
     "version": "0.1.0",
     "author": "Raül Pérez <repejota@gmail.com>",
     "preferGlobal": true,
-    "main": "./src/main",
+    "main": "./src/main.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/repejota/bashprompt.git"
+        "url": "https://github.com/repejota/bashprompt.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/repejota/bashprompt.js/issues"
     },
     "dependencies": {
-
+        "colors": "*"
     },
     "analyze": false,
     "devDependencies": {
@@ -22,12 +25,14 @@
         "karma-ng-html2js-preprocessor": "~0.1.0",
         "karma-ng-scenario": "~0.1.0"
     },
-    "scripts": {
+    "bin": {
         "bashprompt": "./bin/bashprompt"
     },
-    "license": "MIT",
+    "license": [{
+        "type": "MIT",
+        "url": "http://github.com/repejota/bashprompt.js/blob/master/LICENSE"
+    }],
     "engine": {
         "node": ">=0.10.*"
     }
 }
-
