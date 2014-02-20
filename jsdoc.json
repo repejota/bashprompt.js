@@ -1,0 +1,29 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["lib", "bin", "README.md"],
+        "exclude": [],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "template": "templates/default",
+        "encoding": "utf8",
+        "destination": "./doc/api/",
+        "recurse": true,
+        "private": true,
+        "lenient": true
+    },
+    "plugins": [ "plugins/markdown" ],
+    "markdown": {
+        "parser": "gfm",
+        "hardwrap": true
+    }
+}

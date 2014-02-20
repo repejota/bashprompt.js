@@ -26,4 +26,6 @@
 // END LICENSE BLOCK
 //
 
-require('bashprompt');
+var bp = require('bashprompt');
+var cli = bp.cli;
+cli.run();
