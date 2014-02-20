@@ -20,7 +20,8 @@
   "dependencies": {
     "nomnom": "*",
     "colors": "*",
-    "git-rev": "*"
+    "git-rev": "*",
+    "underscore": "*"
   },
   "analyze": false,
   "devDependencies": {

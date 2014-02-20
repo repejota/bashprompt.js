@@ -25,8 +25,12 @@
 ## END LICENSE BLOCK
 #
 #!/bin/bash
+
+export PROMPT_COMMAND=''
+export PS1='\u@\h:\w\$'
+
 function _bashPrompt() {
-    export PS1="$(bp build $? 2> /dev/null)"
+    export PS1="$(bp build $?)" # 2> /dev/null)"
 }
 # Bash provides an environment variable called PROMPT_COMMAND. The contents of this variable are executed as a regular
 # Bash command just before Bash displays a prompt.
