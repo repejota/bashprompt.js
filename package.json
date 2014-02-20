@@ -1,50 +1,60 @@
 {
-  "name": "bashprompt",
-  "description": "A bash prompt framework in node.js",
-  "version": "0.1.0",
-  "author": "Raül Pérez <repejota@gmail.com>",
-  "preferGlobal": true,
-  "main": "./lib/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/repejota/bashprompt.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/repejota/bashprompt.js/issues"
-  },
-  "homepage": "https://github.com/repejota/bashprompt.js",
-  "dependencies": {
-    "nomnom": "*",
-    "colors": "*",
-    "git-rev": "*"
-  },
-  "analyze": false,
-  "devDependencies": {
-    "matchdep": "*",
-    "grunt": "*",
-    "grunt-karma": "*",
-    "grunt-jsdoc": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-lint-bash": "*"
-  },
-  "bin": {
-    "bp": "./bin/bp"
-  },
-  "license": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/repejota/bashprompt.js/blob/master/LICENSE"
-    }
-  ],
-  "engine": {
-    "node": ">=0.10.0"
-  },
-  "readmeFilename": "README.md",
-  "_id": "bashprompt@0.1.0",
-  "_from": "bashprompt@>=0.1"
+    "name": "bashprompt",
+    "description": "A bash prompt framework in node.js",
+    "version": "0.1.0",
+    "author": "Raül Pérez <repejota@gmail.com>",
+    "preferGlobal": true,
+    "main": "./lib/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/repejota/bashprompt.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/repejota/bashprompt.js/issues"
+    },
+    "homepage": "https://github.com/repejota/bashprompt.js",
+    "dependencies": {
+        "nomnom": "*",
+        "colors": "*",
+        "git-rev": "*"
+    },
+    "analyze": false,
+    "devDependencies": {
+        "matchdep": "*",
+        "grunt": "*",
+        "grunt-karma": "*",
+        "grunt-jsdoc": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-lint-bash": "*"
+    },
+    "bin": {
+        "bp": "./bin/bp"
+    },
+    "license": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/repejota/bashprompt.js/blob/master/LICENSE"
+        }
+    ],
+    "engine": {
+        "node": ">=0.10.0"
+    },
+    "keywords": [
+        "ansi",
+        "terminal",
+        "colors",
+        "bash",
+        "propmt",
+        "ps1",
+        "ps2",
+        "shell"
+    ],
+    "readmeFilename": "README.md",
+    "_id": "bashprompt@0.1.0",
+    "_from": "bashprompt@*"
 }

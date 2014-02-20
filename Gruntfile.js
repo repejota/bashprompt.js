@@ -86,14 +86,6 @@ module.exports = function (grunt) {
         'jsdoc:build'
     ]);
 
-    // Dist task
-    grunt.registerTask('dist', [
-    ]);
-
-    // Release task
-    grunt.registerTask('release', [
-    ]);
-
     // Prune task
     grunt.registerTask('prune', [
         'clean'
