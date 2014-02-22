@@ -25,24 +25,18 @@
 // END LICENSE BLOCK
 //
 
-/**
- * @class bashprompt.Partials.user
- * @constructor
- */
-var user = {
+var assert = require("assert");
 
-    /**
-     * Get the current user's username
-     *
-     * @returns {string} - Username
-     */
-    username: function () {
-        'use strict';
+describe('Dummy Spec', function () {
 
-        return '\\u';
-    }
+    describe('Dummy Suite', function () {
 
-};
+        it('Dummy Test', function () {
 
-/** @module bashprompt/partials/user */
-module.exports = user;
+            assert.equal(true, true);
+
+        });
+
+    });
+
+});

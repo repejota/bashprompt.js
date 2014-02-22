@@ -25,24 +25,20 @@
 // END LICENSE BLOCK
 //
 
-/**
- * @class bashprompt.Partials.user
- * @constructor
- */
-var user = {
+var assert = require("assert");
 
-    /**
-     * Get the current user's username
-     *
-     * @returns {string} - Username
-     */
-    username: function () {
-        'use strict';
+describe('bashprompt Spec', function () {
+    'use strict';
 
-        return '\\u';
-    }
+    describe('bashprompt Instance', function () {
 
-};
+        var bp = require('../lib/index');
 
-/** @module bashprompt/partials/user */
-module.exports = user;
+        it('should not be null', function () {
+            assert.notEqual(bp, null);
+            assert.notEqual(bp, undefined);
+        });
+
+    });
+
+});

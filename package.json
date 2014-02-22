@@ -19,15 +19,13 @@
     },
     "homepage": "https://github.com/repejota/bashprompt.js",
     "dependencies": {
-        "nomnom": "*",
-        "colors": "*",
-        "git-rev": "*"
+        "nomnom": "*"
     },
     "analyze": false,
     "devDependencies": {
+        "mocha": "*",
         "matchdep": "*",
         "grunt": "*",
-        "grunt-karma": "*",
         "grunt-jsdoc": "*",
         "grunt-contrib-jshint": "*",
         "grunt-contrib-clean": "*",
@@ -35,6 +33,10 @@
     },
     "bin": {
         "bp": "./bin/bp"
+    },
+    "scripts": {
+        "prepublish": "npm prune",
+        "test": "mocha test --colors --recursive --watch --reporter dot"
     },
     "licenses": [
         {
