@@ -3,6 +3,7 @@
     "description": "A bash prompt framework in node.js",
     "version": "0.1.0",
     "author": "Raül Pérez <repejota@gmail.com>",
+    "contributors": "https://github.com/repejota/bashprompt.js/graphs/contributors",
     "preferGlobal": true,
     "main": "./lib/index.js",
     "directories": {
@@ -35,7 +36,7 @@
     "bin": {
         "bp": "./bin/bp"
     },
-    "license": [
+    "licenses": [
         {
             "type": "MIT",
             "url": "http://github.com/repejota/bashprompt.js/blob/master/LICENSE"
