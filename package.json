@@ -1,7 +1,7 @@
 {
     "name": "bashprompt",
     "description": "A bash prompt framework in node.js",
-    "version": "0.1.0",
+    "version": "0.2.1",
     "author": "Raül Pérez <repejota@gmail.com>",
     "contributors": "https://github.com/repejota/bashprompt.js/graphs/contributors",
     "preferGlobal": true,
@@ -50,7 +50,7 @@
         }
     ],
     "engine": {
-        "node": ">=0.10.0"
+        "node": ">=0.6.0"
     },
     "keywords": [
         "ansi",
@@ -63,6 +63,6 @@
         "shell"
     ],
     "readmeFilename": "README.md",
-    "_id": "bashprompt@0.1.0",
+    "_id": "bashprompt@0.2.1",
     "_from": "bashprompt@*"
 }
