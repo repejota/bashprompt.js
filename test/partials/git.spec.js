@@ -44,20 +44,21 @@ describe('bashprompt.partials.git spec', function () {
     });
 
     describe('supports synchronous execution model', function () {
+
         var git = require('../../lib/partials/git');
 
-        beforeEach(function () {
-            childsync.run('rm -rf /tmp/.bptest/git; ' +
-                'mkdir -p /tmp/.bptest/git/invalid; ' +
-                'mkdir -p /tmp/.bptest/git/valid; ' +
-                'cd /tmp/.bptest/valid; ' +
-                'git init -q; ' +
-                'echo "bar" > foo.txt; ' +
-                'git add foo.txt; ' +
-                'git commit -aqm "first commit"');
-        });
-
         describe('tries to get branch info', function () {
+
+            before(function () {
+                childsync.run('rm -rf /tmp/.bptest/git; ' +
+                    'mkdir -p /tmp/.bptest/git/invalid; ' +
+                    'mkdir -p /tmp/.bptest/git/valid; ' +
+                    'cd /tmp/.bptest/valid; ' +
+                    'git init -q; ' +
+                    'echo "bar" > foo.txt; ' +
+                    'git add foo.txt; ' +
+                    'git commit -aqm "first commit"');
+            });
 
             it('from non-valid repo folder result code is > 0', function () {
                 process.chdir('/tmp/.bptest/git/invalid');
