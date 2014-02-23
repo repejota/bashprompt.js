@@ -18,10 +18,11 @@
         "url": "https://github.com/repejota/bashprompt.js/issues"
     },
     "homepage": "https://github.com/repejota/bashprompt.js",
-    "dependencies": {
-        "nomnom": "*"
-    },
     "analyze": false,
+    "dependencies": {
+        "nomnom": "*",
+        "execSync": "*"
+    },
     "devDependencies": {
         "mocha": "*",
         "istanbul": "*",
