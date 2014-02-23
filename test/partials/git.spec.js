@@ -47,31 +47,53 @@ describe('bashprompt.partials.git spec', function () {
 
         var git = require('../../lib/partials/git');
 
+        /**
+         * Prepare git tests fixture folders.
+         *
+         * /tmp/.bptest/git/invalid
+         *  - Contains a folder with no repo.
+         *
+         * /tmp/.bptest/git/valid
+         *  - Contains a folder with a repo.
+         *  - A file foo.txt is created added and commited.
+         */
+        before(function () {
+            childsync.run('mkdir -p /tmp/.bptest/git/invalid; ' +
+                'mkdir -p /tmp/.bptest/git/valid; ' +
+                'cd /tmp/.bptest/git/valid; ' +
+                'git init -q; ' +
+                'echo "bar" > foo.txt; ' +
+                'git add foo.txt; ' +
+                'git commit -aqm "first commit"; ');
+        });
+
         describe('tries to get branch info', function () {
 
-            before(function () {
-                childsync.run('rm -rf /tmp/.bptest/git; ' +
-                    'mkdir -p /tmp/.bptest/git/invalid; ' +
-                    'mkdir -p /tmp/.bptest/git/valid; ' +
-                    'cd /tmp/.bptest/valid; ' +
-                    'git init -q; ' +
-                    'echo "bar" > foo.txt; ' +
-                    'git add foo.txt; ' +
-                    'git commit -aqm "first commit"');
-            });
-
-            it('from non-valid repo folder result code is > 0', function () {
+            it('from non-valid repo folder result.error.code is > 0', function () {
                 process.chdir('/tmp/.bptest/git/invalid');
-                var branchInfo = git.branchInfoSync();
-                assert.notEqual(branchInfo.code, 0);
+                var res = git.branchInfoSync();
+                assert.notEqual(res.code, 0);
             });
 
-            it('from valid repo folder result code is > 0', function () {
+            it('from valid repo folder result.error.code is === 0', function () {
                 process.chdir('/tmp/.bptest/git/valid');
-                var branchInfo = git.branchInfoSync();
-                assert.equal(branchInfo.code, 0);
+                var res = git.branchInfoSync();
+                assert.equal(res.code, 0);
+                assert.equal(res.stdout, '## master\n');
+                assert.equal(res.name, 'master');
             });
 
+        });
+
+        /**
+         * Clean git tests fixture folders.
+         *
+         * /tmp/.bptest/git
+         *  - Removes this directory.
+         */
+        after(function () {
+            process.chdir(process.env.HOME);
+            childsync.run('rm -rf /tmp/.bptest/git');
         });
 
     });
