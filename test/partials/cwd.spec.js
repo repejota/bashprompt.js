@@ -27,28 +27,31 @@
 
 var assert = require('assert');
 
-describe('bashprompt.partials.cwd spec', function () {
+describe('bashprompt cwd partial Spec', function () {
+
     'use strict';
 
-    describe('bashprompt.partial.cwd instance', function () {
+    describe('creating standalone partial instance object', function () {
 
         var cwd = require('../../lib/partials/cwd');
 
-        it('should not be null', function () {
+        it('is not null', function () {
             assert.notEqual(cwd, null);
             assert.notEqual(cwd, undefined);
         });
 
-        it('shows current user $HOME path', function () {
+        it('provides user $HOME path', function () {
             var home = process.env.HOME;
             assert.equal(cwd.userHomeDirectory(), home);
         });
 
-        it('shows current absolute path', function () {
+        it('provides current user absolute path', function () {
             var current_abs_path = process.cwd();
             assert.equal(cwd.absoluteWorkDirectory(), current_abs_path);
         });
 
+        // TODO
+        // cwd.currentWorkDirectory
     });
 
 });

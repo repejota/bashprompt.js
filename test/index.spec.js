@@ -28,9 +28,10 @@
 var assert = require('assert');
 
 describe('bashprompt Spec', function () {
+
     'use strict';
 
-    describe('bashprompt Instance', function () {
+    describe('bashprompt main entry point instance', function () {
 
         var bp = require('../lib/index');
 

@@ -28,15 +28,15 @@
 var assert = require('assert');
 var childsync = require('execSync');
 
-describe('bashprompt.partials.git spec', function () {
+describe('bashprompt git partial Spec', function () {
 
     'use strict';
 
-    describe('bashprompt.partial.git instance', function () {
+    describe('creating standalone partial instance object', function () {
 
         var git = require('../../lib/partials/git');
 
-        it('should not be null', function () {
+        it('is not null', function () {
             assert.notEqual(git, null);
             assert.notEqual(git, undefined);
         });

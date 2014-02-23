@@ -27,19 +27,20 @@
 
 var assert = require('assert');
 
-describe('bashprompt.partials.user spec', function () {
+describe('bashprompt user partial Spec', function () {
+
     'use strict';
 
-    describe('bashprompt.partial.user instance', function () {
+    describe('creating standalone partial instance object', function () {
 
         var user = require('../../lib/partials/user');
 
-        it('should not be null', function () {
+        it('it is not null', function () {
             assert.notEqual(user, null);
             assert.notEqual(user, undefined);
         });
 
-        it('shows user\'s username', function () {
+        it('provides user\'s username', function () {
             assert.equal(user.username(), '\\u');
         });
 

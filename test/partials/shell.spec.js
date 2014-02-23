@@ -27,35 +27,36 @@
 
 var assert = require('assert');
 
-describe('bashprompt.shell.user spec', function () {
+describe('bashprompt shell partial Spec', function () {
+
     'use strict';
 
-    describe('bashprompt.partial.user instance', function () {
+    describe('creating standalone partial instance object', function () {
 
         var shell = require('../../lib/partials/shell');
 
-        it('should not be null', function () {
+        it('is not null', function () {
             assert.notEqual(shell, null);
             assert.notEqual(shell, undefined);
         });
 
-        it('shows current number of jobs running', function () {
+        it('provides current number of jobs running', function () {
             assert.equal(shell.countJobs(), '\\j');
         });
 
-        it('shows basename of the shell\'s terminal device', function () {
+        it('provides the basename of the shell\'s terminal device', function () {
             assert.equal(shell.baseName(), '\\l');
         });
 
-        it('shows the name of the shell', function () {
+        it('provides the name of the shell', function () {
             assert.equal(shell.name(), '\\s');
         });
 
-        it('shows the version of the shell', function () {
+        it('provides the version of the shell', function () {
             assert.equal(shell.version(), '\\v');
         });
 
-        it('shows the release version of the shell', function () {
+        it('provides the release version of the shell', function () {
             assert.equal(shell.releaseVersion(), '\\V');
         });
 

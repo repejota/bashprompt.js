@@ -27,23 +27,24 @@
 
 var assert = require('assert');
 
-describe('bashprompt.partials.hostname spec', function () {
+describe('bashprompt hostname partial Spec', function () {
+
     'use strict';
 
-    describe('bashprompt.partial.hostname instance', function () {
+    describe('creating standalone partial instance object', function () {
 
         var hostname = require('../../lib/partials/hostname');
 
-        it('should not be null', function () {
+        it('is not null', function () {
             assert.notEqual(hostname, null);
             assert.notEqual(hostname, undefined);
         });
 
-        it('shows hostname\'s short name', function () {
+        it('provides hostname\'s short name', function () {
             assert.equal(hostname.shortHostname(), '\\h');
         });
 
-        it('shows hostname\'s full name', function () {
+        it('provides hostname\'s full name', function () {
             assert.equal(hostname.fullHostname(), '\\H');
         });
 
