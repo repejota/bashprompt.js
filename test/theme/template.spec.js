@@ -79,13 +79,13 @@ describe('bashprompt.theme.template spec', function () {
             assert.equal(result, 'Value 1: foo - Value 2: bar');
         });
 
-        it('leaves untouched tokens that not exists', function () {
+        it('if a token value doesn\'t exist remove the token from the template', function () {
             var source = '{{foo}} exists but {{bar}} don\'t';
             var context = {
                 foo: 'foo token'
             };
             var result = template.compile(source, context);
-            assert.equal(result, 'foo token exists but {{bar}} don\'t');
+            assert.equal(result, 'foo token exists but  don\'t');
         });
 
     });
