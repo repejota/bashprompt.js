@@ -80,13 +80,13 @@ module.exports = function (grunt) {
             build: {
                 files: [{
                     dot: true,
-                    src: ['doc/api']
+                    src: ['doc/api', 'coverage']
                 }]
             },
             prune: {
                 files: [{
                     dot: true,
-                    src: ['node_modules']
+                    src: ['node_modules', 'npm-debug.log']
                 }]
             }
         }
