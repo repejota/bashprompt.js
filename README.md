@@ -45,7 +45,7 @@ export PROMPT_COMMAND="_bashPrompt; $PROMPT_COMMAND"
 
 Here is an screenshot of my current bash prompt:
 
-![bashprompt example](/path/to/img.jpg)
+![bashprompt example](https://github.com/repejota/bashprompt.js/blob/master/doc/website/img/screenshot.png)
 
 ## Create your own prompt
 
