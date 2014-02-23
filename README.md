@@ -1,6 +1,15 @@
 # bashprompt.js
 
-A bash prompt framework in node.js.
+[![Build Status](https://travis-ci.org/repejota/bashprompt.js.png?branch=master)](https://travis-ci.org/repejota/bashprompt.js)
+
+bashprompt.js is a framework and a command line tool to create your own and
+full featured prompt for bash. It is built in javascript and node.js.
+
+Don't know about what I'm talking about? Take a look on this ancient HOWTO
+<http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/>
+;)
+
+Convinced? Now see how you can get one:
 
 ## Download & Install
 
@@ -10,13 +19,17 @@ Install as a usual node.js package with *npm* utility:
 $ npm install bashprompt
 ```
 
-Note that you will also need for a pactched font in case you want to show unicode characters on
-your prompt. If so, please choose and download a font at
-https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts.
+Note that you will also need a patched font in case you want to show
+any of those unicode characters at your prompt.
 
-## Usage
+If so, please choose and download a font at
+<https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts>
 
-Add these lines to your *.bashrc*.
+Once you installed all this requirements you will be ready to setup and start
+using bashprompt on your system. Let's start to setup the default
+configuration:
+
+Add these lines to your *.bashrc* :
 
 ```bash
 function _bashPrompt() {
@@ -28,7 +41,24 @@ function _bashPrompt() {
 export PROMPT_COMMAND="_bashPrompt; $PROMPT_COMMAND"
 ```
 
+## Screenshot
+
+Here is an screenshot of my current bash prompt:
+
+![bashprompt example](/path/to/img.jpg)
+
+## Create your own prompt
+
+To create your own prompt:
+
+* TODO
+* ..
+* ..
+* ..
+
 ## TODO
+
+Want to help? There's always tasks to do!
 
 * Look at the current issues : https://github.com/repejota/bashprompt.js/issues
 
