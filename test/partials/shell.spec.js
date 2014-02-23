@@ -25,32 +25,40 @@
 // END LICENSE BLOCK
 //
 
-/**
- * @namespace bashprompt.partials.hostname
- */
-var hostname = {};
+var assert = require('assert');
 
-/**
- * Get the hostname up to the first '.'
- *
- * @returns {string} - String with short hostname.
- */
-hostname.shortHostname = function () {
+describe('bashprompt.shell.user spec', function () {
     'use strict';
 
-    return '\\h';
-};
+    describe('bashprompt.partial.user instance', function () {
 
-/**
- * Get the full hostname.
- *
- * @returns {string} - String with full hostname.
- */
-hostname.fullHostname = function () {
-    'use strict';
+        var shell = require('../../lib/partials/shell');
 
-    return '\\H';
-};
+        it('should not be null', function () {
+            assert.notEqual(shell, null);
+            assert.notEqual(shell, undefined);
+        });
 
-/** @module bashprompt/partials/hostname*/
-module.exports = hostname;
+        it('shows current number of jobs running', function () {
+            assert.equal(shell.countJobs(), '\\j');
+        });
+
+        it('shows bashename of the shell\'s terminal device', function () {
+            assert.equal(shell.baseName(), '\\l');
+        });
+
+        it('shows the name of the shell', function () {
+            assert.equal(shell.name(), '\\s');
+        });
+
+        it('shows the version of the shell', function () {
+            assert.equal(shell.version(), '\\v');
+        });
+
+        it('shows the release version of the shell', function () {
+            assert.equal(shell.releaseVersion(), '\\V');
+        });
+
+    });
+
+});

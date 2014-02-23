@@ -35,6 +35,21 @@ module.exports = function (grunt) {
     // Configuration tasks
     grunt.initConfig({
 
+        shell: {
+            test: {
+                options: {
+                    stdout: true
+                },
+                command: './node_modules/.bin/mocha --colors --recursive -R spec'
+            },
+            coverage: {
+                options: {
+                    stdout: true
+                },
+                command: './node_modules/.bin/istanbul cover --print detail ./node_modules/.bin/_mocha -- --colors --recursive -R spec'
+            }
+        },
+
         jsdoc: {
             build: {
                 options: {
@@ -95,6 +110,16 @@ module.exports = function (grunt) {
     grunt.registerTask('check', [
         'bashlint',
         'jshint'
+    ]);
+
+    // Test task
+    grunt.registerTask('test', [
+        'shell:test'
+    ]);
+
+    // Coverage task
+    grunt.registerTask('coverage', [
+        'shell:coverage'
     ]);
 
     // Doc task

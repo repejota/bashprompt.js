@@ -24,19 +24,22 @@
     "analyze": false,
     "devDependencies": {
         "mocha": "*",
+        "istanbul": "*",
         "matchdep": "*",
         "grunt": "*",
         "grunt-jsdoc": "*",
         "grunt-contrib-jshint": "*",
         "grunt-contrib-clean": "*",
-        "grunt-lint-bash": "*"
+        "grunt-lint-bash": "*",
+        "grunt-shell": "*"
     },
     "bin": {
         "bp": "./bin/bp"
     },
     "scripts": {
         "prepublish": "npm prune",
-        "test": "mocha test --colors --recursive --watch --reporter dot"
+        "test": "mocha test --colors --recursive --watch --reporter spec",
+        "coverage": "./node_modules/istanbul/lib/cli.js cover --print detail ./node_modules/mocha/bin/_mocha -- --colors --recursive -R spec"
     },
     "licenses": [
         {

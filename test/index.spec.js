@@ -25,7 +25,7 @@
 // END LICENSE BLOCK
 //
 
-var assert = require("assert");
+var assert = require('assert');
 
 describe('bashprompt Spec', function () {
     'use strict';

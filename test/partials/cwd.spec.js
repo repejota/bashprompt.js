@@ -25,32 +25,30 @@
 // END LICENSE BLOCK
 //
 
-/**
- * @namespace bashprompt.partials.hostname
- */
-var hostname = {};
+var assert = require('assert');
 
-/**
- * Get the hostname up to the first '.'
- *
- * @returns {string} - String with short hostname.
- */
-hostname.shortHostname = function () {
+describe('bashprompt.partials.cwd spec', function () {
     'use strict';
 
-    return '\\h';
-};
+    describe('bashprompt.partial.cwd instance', function () {
 
-/**
- * Get the full hostname.
- *
- * @returns {string} - String with full hostname.
- */
-hostname.fullHostname = function () {
-    'use strict';
+        var cwd = require('../../lib/partials/cwd');
 
-    return '\\H';
-};
+        it('should not be null', function () {
+            assert.notEqual(cwd, null);
+            assert.notEqual(cwd, undefined);
+        });
 
-/** @module bashprompt/partials/hostname*/
-module.exports = hostname;
+        it('shows current user $HOME path', function () {
+            var home = process.env.HOME;
+            assert.equal(cwd.userHomeDirectory(), home);
+        });
+
+        it('shows current absolute path', function () {
+            var current_abs_path = process.cwd();
+            assert.equal(cwd.absoluteWorkDirectory(), current_abs_path);
+        });
+
+    });
+
+});

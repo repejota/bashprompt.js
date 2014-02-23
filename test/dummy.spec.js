@@ -25,16 +25,15 @@
 // END LICENSE BLOCK
 //
 
-var assert = require("assert");
+var assert = require('assert');
 
 describe('Dummy Spec', function () {
+    'use strict';
 
     describe('Dummy Suite', function () {
 
         it('Dummy Test', function () {
-
             assert.equal(true, true);
-
         });
 
     });

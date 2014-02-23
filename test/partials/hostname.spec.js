@@ -25,32 +25,28 @@
 // END LICENSE BLOCK
 //
 
-/**
- * @namespace bashprompt.partials.hostname
- */
-var hostname = {};
+var assert = require('assert');
 
-/**
- * Get the hostname up to the first '.'
- *
- * @returns {string} - String with short hostname.
- */
-hostname.shortHostname = function () {
+describe('bashprompt.partials.hostname spec', function () {
     'use strict';
 
-    return '\\h';
-};
+    describe('bashprompt.partial.hostname instance', function () {
 
-/**
- * Get the full hostname.
- *
- * @returns {string} - String with full hostname.
- */
-hostname.fullHostname = function () {
-    'use strict';
+        var hostname = require('../../lib/partials/hostname');
 
-    return '\\H';
-};
+        it('should not be null', function () {
+            assert.notEqual(hostname, null);
+            assert.notEqual(hostname, undefined);
+        });
 
-/** @module bashprompt/partials/hostname*/
-module.exports = hostname;
+        it('shows hostname\'s short name', function () {
+            assert.equal(hostname.shortHostname(), '\\h');
+        });
+
+        it('shows hostname\'s full name', function () {
+            assert.equal(hostname.fullHostname(), '\\H');
+        });
+
+    });
+
+});
