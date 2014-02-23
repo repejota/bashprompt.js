@@ -32,11 +32,60 @@ describe('bashprompt.theme.template spec', function () {
 
     describe('bashprompt.theme.template instance', function () {
 
-        var user = require('../../lib/theme/template');
+        var template = require('../../lib/theme/template');
 
         it('should not be null', function () {
-            assert.notEqual(user, null);
-            assert.notEqual(user, undefined);
+            assert.notEqual(template, null);
+            assert.notEqual(template, undefined);
+        });
+
+        it('compiles blank template to a blank string', function () {
+            var source = '';
+            var context = {};
+            var result = template.compile(source, context);
+            assert.equal(result, '');
+        });
+
+        it('compiles undefined template to a blank string', function () {
+            var source;
+            var context = {};
+            var result = template.compile(source, context);
+            assert.equal(result, '');
+        });
+
+        it('compiles null template to a blank string', function () {
+            var source;
+            var context = null;
+            var result = template.compile(source, context);
+            assert.equal(result, '');
+        });
+
+        it('compiles simple key/value substitution', function () {
+            var source = '{{foo}}';
+            var context = {
+                foo: 'bar'
+            };
+            var result = template.compile(source, context);
+            assert.equal(result, 'bar');
+        });
+
+        it('compiles multiple key/value substitutions', function () {
+            var source = 'Value 1: {{one}} - Value 2: {{two}}';
+            var context = {
+                one: 'foo',
+                two: 'bar'
+            };
+            var result = template.compile(source, context);
+            assert.equal(result, 'Value 1: foo - Value 2: bar');
+        });
+
+        it('leaves untouched tokens that not exists', function () {
+            var source = '{{foo}} exists but {{bar}} don\'t';
+            var context = {
+                foo: 'foo token'
+            };
+            var result = template.compile(source, context);
+            assert.equal(result, 'foo token exists but {{bar}} don\'t');
         });
 
     });
