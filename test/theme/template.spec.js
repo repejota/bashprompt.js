@@ -25,53 +25,20 @@
 // END LICENSE BLOCK
 //
 
-/**
- * Git Branch Info Type
- *
- * @typedef {Object} bashprompt~partials~git~branchInfo
- *
- * @property {string} name - The branch name
- */
-var branchInfo = {
-    name: null
-};
+var assert = require('assert');
 
-/**
- * @namespace bashprompt.partials.git
- */
-var git = {};
-
-/**
- * Get the branch name of a Git repository.
- *
- * {@link bashprompt.partials.git.branchInfo}
- *
- * @param callback {function} - Function to execute once info is retrieved.
- */
-git.branchInfo = function (callback) {
+describe('bashprompt.theme.template spec', function () {
     'use strict';
 
-    var child = require('child_process');
-    var cmd = 'git status -sb --ignore-submodules';
+    describe('bashprompt.theme.template instance', function () {
 
-    child.exec(cmd, function (err, stdout, stderr) {
+        var user = require('../../lib/theme/template');
 
-        // Check for errors
-        if (err || !stdout) { return callback(err, null); }
+        it('should not be null', function () {
+            assert.notEqual(user, null);
+            assert.notEqual(user, undefined);
+        });
 
-        // Supprocess results all lines
-        var lines = stdout.trim().split('\n');
-
-        // First line ( it contains branch name )
-        var status = lines.shift().trim();
-
-        // Get the branch name
-        var matches = status.match(/^## ([A-Za-z0-9.-]+)/);
-        if (matches) { branchInfo.name = matches[1]; }
-
-        callback(null, branchInfo);
     });
-};
 
-/** @module bashprompt/partials/git */
-module.exports = git;
+});
