@@ -43,7 +43,7 @@ describe('bashprompt.shell.user spec', function () {
             assert.equal(shell.countJobs(), '\\j');
         });
 
-        it('shows bashename of the shell\'s terminal device', function () {
+        it('shows basename of the shell\'s terminal device', function () {
             assert.equal(shell.baseName(), '\\l');
         });
 

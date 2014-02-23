@@ -39,7 +39,7 @@
     "scripts": {
         "prepublish": "npm prune",
         "test": "mocha test --colors --recursive --reporter spec",
-        "test-watch": "mocha test --watch --colors --recursive --reporter spec",
+        "test-watch": "mocha test --watch --colors --recursive --reporter dot",
         "coverage": "./node_modules/istanbul/lib/cli.js cover --print detail ./node_modules/mocha/bin/_mocha -- --colors --recursive -R spec"
     },
     "licenses": [
