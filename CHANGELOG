@@ -1,0 +1,6 @@
+v0.2.0:
+    date: 2014-02-23
+    changes:
+        - First usable version of bashprompt.js.
+        - Almost everything is hard coded so it needs a general refactor and
+         a lot of unit testing. Be patient! This is a work in progress.
