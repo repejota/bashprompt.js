@@ -26,8 +26,10 @@
 //
 
 var assert = require('assert');
+var childsync = require('execSync');
 
 describe('bashprompt.partials.git spec', function () {
+
     'use strict';
 
     describe('bashprompt.partial.git instance', function () {
@@ -37,6 +39,38 @@ describe('bashprompt.partials.git spec', function () {
         it('should not be null', function () {
             assert.notEqual(git, null);
             assert.notEqual(git, undefined);
+        });
+
+    });
+
+    describe('supports synchronous execution model', function () {
+        var git = require('../../lib/partials/git');
+
+        beforeEach(function () {
+            childsync.run('rm -rf /tmp/.bptest/git; ' +
+                'mkdir -p /tmp/.bptest/git/invalid; ' +
+                'mkdir -p /tmp/.bptest/git/valid; ' +
+                'cd /tmp/.bptest/valid; ' +
+                'git init -q; ' +
+                'echo "bar" > foo.txt; ' +
+                'git add foo.txt; ' +
+                'git commit -aqm "first commit"');
+        });
+
+        describe('tries to get branch info', function () {
+
+            it('from non-valid repo folder result code is > 0', function () {
+                process.chdir('/tmp/.bptest/git/invalid');
+                var branchInfo = git.branchInfoSync();
+                assert.notEqual(branchInfo.code, 0);
+            });
+
+            it('from valid repo folder result code is > 0', function () {
+                process.chdir('/tmp/.bptest/git/valid');
+                var branchInfo = git.branchInfoSync();
+                assert.equal(branchInfo.code, 0);
+            });
+
         });
 
     });
