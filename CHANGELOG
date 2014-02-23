@@ -1,6 +1,22 @@
-v0.2.0:
+v0.2.1:
     date: 2014-02-23
+    changes:
+        - Added support for execSync on partials so it allows synchronous
+          partial evaluation.
+        - Decoupled styles from context builder to render layer via template
+          rendering.
+        - Switched to a template context based system instead of the previous
+          plain builder.
+        - Switched to a template string engine instead of the previous
+          renderer.
+        - Added support for expressions on template engine strings to allow
+          styles ( foreground and background colors ) on templates.
+        - Added git branch-name partial feature ( synchronous version ).
+
+v0.2.0:
+    date: 2014-02-21
     changes:
         - First usable version of bashprompt.js.
         - Almost everything is hard coded so it needs a general refactor and
-         a lot of unit testing. Be patient! This is a work in progress.
+          a lot of unit testing. Be patient! This is a work in progress.
+
