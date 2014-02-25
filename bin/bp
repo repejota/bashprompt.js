@@ -26,6 +26,5 @@
 // END LICENSE BLOCK
 //
 
-var bp = require('../lib/index');
-var cli = bp.cli;
+var cli = require('../lib/cli');
 cli.run();
