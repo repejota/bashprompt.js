@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/repejota/bashprompt.js.png?branch=master)](https://travis-ci.org/repejota/bashprompt.js)
 
+![Dependencies Badge](https://david-dm.org/repejota/bashprompt.js.png)
+
 bashprompt.js is a framework and a command line tool to create your own and
 full featured prompt for bash. It is built in javascript and node.js.
 
